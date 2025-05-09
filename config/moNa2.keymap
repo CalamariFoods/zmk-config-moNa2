@@ -12,14 +12,7 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        combo_0 {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <22 11>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -54,6 +47,13 @@
             #binding-cells = <0>;
             bindings = <&kp LANGUAGE_1>, <&kp LANGUAGE_2>;
         };
+
+        td_1: td_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_1";
+            #binding-cells = <0>;
+            bindings = <&mkp MB4>, <&mkp MB5>;
+        };
     };
 
     keymap {
@@ -74,10 +74,10 @@
 
         layer_1 {
             bindings = <
-&kp NUMBER_1          &kp NUMBER_2   &kp NUMBER_3  &kp NUMBER_4          &kp N5                                                            &kp NUMBER_6   &kp N7            &kp N8            &kp N9             &kp N0
-&kp EXCLAMATION       &kp AT         &kp HASH      &kp DOLLAR            &kp PERCENT            &trans        &kp LS(RS(BACKSLASH))        &kp SEMI       &kp SINGLE_QUOTE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&mt LEFT_SHIFT CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp C_MUTE    &kp LS(RS(INTERNATIONAL_1))  &kp GRAVE      &kp EQUAL         &kp COMMA         &kp PERIOD         &mt LEFT_SHIFT SLASH
-&trans                &trans         &trans        &kp LEFT_WIN          &trans                 &trans        &kp DELETE                   &kp BACKSPACE                                                         &kp INTERNATIONAL_1
+&kp NUMBER_1          &kp NUMBER_2   &kp NUMBER_3  &kp NUMBER_4          &kp N5                                                        &kp NUMBER_6   &kp N7            &kp N8            &kp N9             &kp N0
+&kp EXCLAMATION       &kp AT         &kp HASH      &kp DOLLAR            &kp PERCENT            &trans        &kp LS(BACKSLASH)        &kp SEMI       &kp SINGLE_QUOTE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&mt LEFT_SHIFT CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp C_MUTE    &kp LS(INTERNATIONAL_1)  &kp GRAVE      &kp EQUAL         &kp COMMA         &kp PERIOD         &mt LEFT_SHIFT SLASH
+&trans                &trans         &trans        &kp LEFT_WIN          &trans                 &trans        &kp DELETE               &kp BACKSPACE                                                         &kp INTERNATIONAL_1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -96,10 +96,10 @@
 
         layer_3 {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                     &trans                      &kp PAGE_UP     &kp UP_ARROW     &kp PAGE_DOWN    &mkp MB4
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans    &trans  &trans                      &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &kp LG(LS(RS(LEFT_ARROW)))  &kp HOME        &kp PRINTSCREEN  &kp END          &kp LEFT_SHIFT
-&trans          &trans                  &trans          &trans                   &trans   &trans    &trans  &trans                                                                        &mkp MB5
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                     &trans                   &kp PAGE_UP     &kp UP_ARROW     &kp PAGE_DOWN    &td_1
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans    &trans  &kp LG(LS(LEFT_ARROW))   &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW  &trans
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &kp LG(LS(RIGHT_ARROW))  &kp HOME        &kp PRINTSCREEN  &kp END          &kp LEFT_SHIFT
+&trans          &trans                  &trans          &trans                   &trans   &trans    &trans  &trans                                                                     &kp LC(TAB)
             >;
 
             sensor-bindings = <&scroll_up_down>;
