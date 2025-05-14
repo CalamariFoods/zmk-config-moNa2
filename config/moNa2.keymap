@@ -46,7 +46,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_0";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_1>, <&kp LANGUAGE_2>;
+            bindings = <&kp LANGUAGE_1>, <&kp LANGUAGE_2>, <&to 7>;
         };
 
         td_1: td_1 {
@@ -97,10 +97,10 @@
 
         layer_3 {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                     &trans                   &kp PAGE_UP     &kp UP_ARROW     &kp PAGE_DOWN    &td_1
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans    &trans  &kp LG(LS(LEFT_ARROW))   &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &kp LG(LS(RIGHT_ARROW))  &kp HOME        &kp PRINTSCREEN  &kp END          &kp LEFT_SHIFT
-&trans          &trans                  &trans          &trans                   &trans   &trans    &trans  &trans                                                                     &kp LC(TAB)
+&trans  &trans  &trans  &trans  &trans                    &trans                   &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &td_1
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LG(LS(LEFT_ARROW))   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LG(LS(RIGHT_ARROW))  &kp HOME        &trans          &kp END          &kp LEFT_SHIFT
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                                    &kp PRINTSCREEN
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -137,6 +137,15 @@
             >;
 
             sensor-bindings = <&scroll_up_down>;
+        };
+
+        layer_7 {
+            bindings = <
+&kp ESCAPE        &kp Q   &kp W   &kp E   &kp R                              &trans  &trans  &trans  &trans  &trans
+&kp TAB           &kp A   &kp S   &kp D   &kp F      &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT    &kp Z   &kp X   &kp C   &kp V      &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_CONTROL  &trans  &trans  &kp F3  &kp SPACE  &kp NUMBER_4    &to 0   &trans                          &trans
+            >;
         };
     };
 };
